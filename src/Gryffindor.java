@@ -5,7 +5,13 @@ public class Gryffindor extends Hogwards {
     private int honor;
     private int courage;
 
-    public Gryffindor(String name, String faculty, int powerMagic, int transgression, int nobility, int honor, int courage) {
+    public Gryffindor(String name,
+                      String faculty,
+                      int powerMagic,
+                      int transgression,
+                      int nobility,
+                      int honor,
+                      int courage) {
         super(name, faculty, powerMagic, transgression);
         this.nobility = nobility;
         this.honor = honor;
@@ -35,15 +41,17 @@ public class Gryffindor extends Hogwards {
     public void setCourage(int courage) {
         this.courage = courage;
     }
-    public void compare (Gryffindor other) {
+
+    public void compare(Gryffindor other) {
         var sum = nobility + honor + courage;
         var othersum = other.nobility + other.honor + other.courage;
-        if (sum>othersum) {
-            System.out.println(getName()+ " лучший Грифиндорец, чем " + other.getName());
-        }else {
-            System.out.println(other.getName()+ " лучший Грифиндорец, чем " + getName());
+        if (sum > othersum) {
+            System.out.println(getName() + " лучший Грифиндорец, чем " + other.getName());
+        } else {
+            System.out.println(other.getName() + " лучший Грифиндорец, чем " + getName());
         }
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

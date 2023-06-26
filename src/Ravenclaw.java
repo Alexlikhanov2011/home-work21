@@ -1,12 +1,19 @@
 import java.util.Objects;
 
-public class Ravenclaw extends  Hogwards {
+public class Ravenclaw extends Hogwards {
     private int intelligence;
     private int wisdom;
     private int wit;
     private int creativity;
 
-    public Ravenclaw(String name, String faculty, int powerMagic, int transgression, int intelligence, int wisdom, int wit, int creativity) {
+    public Ravenclaw(String name,
+                     String faculty,
+                     int powerMagic,
+                     int transgression,
+                     int intelligence,
+                     int wisdom,
+                     int wit,
+                     int creativity) {
         super(name, faculty, powerMagic, transgression);
         this.intelligence = intelligence;
         this.wisdom = wisdom;
@@ -45,13 +52,14 @@ public class Ravenclaw extends  Hogwards {
     public void setCreativity(int creativity) {
         this.creativity = creativity;
     }
-    public void compare (Ravenclaw other) {
-        var sum = intelligence + wisdom + wit+ creativity;
-        var othersum = other.intelligence+ other.wisdom + other.wit + other.creativity;
-        if (sum>othersum) {
-            System.out.println(getName()+ " лучший Когтевранец, чем " + other.getName());
-        }else {
-            System.out.println(other.getName()+ " лучший Когтевранец, чем " + getName());
+
+    public void compare(Ravenclaw other) {
+        var sum = intelligence + wisdom + wit + creativity;
+        var othersum = other.intelligence + other.wisdom + other.wit + other.creativity;
+        if (sum > othersum) {
+            System.out.println(getName() + " лучший Когтевранец, чем " + other.getName());
+        } else {
+            System.out.println(other.getName() + " лучший Когтевранец, чем " + getName());
         }
     }
 
@@ -61,12 +69,19 @@ public class Ravenclaw extends  Hogwards {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Ravenclaw ravenclaw = (Ravenclaw) o;
-        return intelligence == ravenclaw.intelligence && wisdom == ravenclaw.wisdom && wit == ravenclaw.wit && creativity == ravenclaw.creativity;
+        return intelligence == ravenclaw.intelligence && wisdom ==
+                ravenclaw.wisdom && wit ==
+                ravenclaw.wit && creativity ==
+                ravenclaw.creativity;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), intelligence, wisdom, wit, creativity);
+        return Objects.hash(super.hashCode(),
+                intelligence,
+                wisdom,
+                wit,
+                creativity);
     }
 
     @Override

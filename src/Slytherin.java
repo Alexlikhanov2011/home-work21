@@ -1,13 +1,21 @@
 import java.util.Objects;
 
-public class Slytherin extends Hogwards{
+public class Slytherin extends Hogwards {
     private int cunning;
     private int determination;
     private int ambition;
     private int resourcefulness;
     private int imperiousness;
 
-    public Slytherin(String name, String faculty, int powerMagic, int transgression, int cunning, int determination, int ambition, int resourcefulness, int imperiousness) {
+    public Slytherin(String name,
+                     String faculty,
+                     int powerMagic,
+                     int transgression,
+                     int cunning,
+                     int determination,
+                     int ambition,
+                     int resourcefulness,
+                     int imperiousness) {
         super(name, faculty, powerMagic, transgression);
         this.cunning = cunning;
         this.determination = determination;
@@ -55,13 +63,18 @@ public class Slytherin extends Hogwards{
     public void setImperiousness(int imperiousness) {
         this.imperiousness = imperiousness;
     }
-    public void compare (Slytherin other) {
+
+    public void compare(Slytherin other) {
         var sum = cunning + determination + ambition + resourcefulness + imperiousness;
-        var othersum = other.cunning+ other.determination + other.ambition + other.resourcefulness + other.imperiousness;
-        if (sum>othersum) {
-            System.out.println(getName()+ " лучший Слизеренец, чем " + other.getName());
-        }else {
-            System.out.println(other.getName()+ " лучший Слизеренец, чем " + getName());
+        var othersum = other.cunning +
+                other.determination +
+                other.ambition +
+                other.resourcefulness +
+                other.imperiousness;
+        if (sum > othersum) {
+            System.out.println(getName() + " лучший Слизеренец, чем " + other.getName());
+        } else {
+            System.out.println(other.getName() + " лучший Слизеренец, чем " + getName());
         }
     }
 
@@ -71,12 +84,21 @@ public class Slytherin extends Hogwards{
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Slytherin slytherin = (Slytherin) o;
-        return cunning == slytherin.cunning && determination == slytherin.determination && ambition == slytherin.ambition && resourcefulness == slytherin.resourcefulness && imperiousness == slytherin.imperiousness;
+        return cunning == slytherin.cunning && determination ==
+                slytherin.determination && ambition ==
+                slytherin.ambition && resourcefulness ==
+                slytherin.resourcefulness && imperiousness ==
+                slytherin.imperiousness;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), cunning, determination, ambition, resourcefulness, imperiousness);
+        return Objects.hash(super.hashCode(),
+                cunning,
+                determination,
+                ambition,
+                resourcefulness,
+                imperiousness);
     }
 
     @Override

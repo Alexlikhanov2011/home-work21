@@ -5,7 +5,13 @@ public class Hufflepuff extends Hogwards {
     private int loyalty;
     private int honesty;
 
-    public Hufflepuff(String name, String faculty, int powerMagic, int transgression, int industriousness, int loyalty, int honesty) {
+    public Hufflepuff(String name,
+                      String faculty,
+                      int powerMagic,
+                      int transgression,
+                      int industriousness,
+                      int loyalty,
+                      int honesty) {
         super(name, faculty, powerMagic, transgression);
         this.industriousness = industriousness;
         this.loyalty = loyalty;
@@ -35,13 +41,14 @@ public class Hufflepuff extends Hogwards {
     public void setHonesty(int honesty) {
         this.honesty = honesty;
     }
-    public void compare (Hufflepuff other) {
+
+    public void compare(Hufflepuff other) {
         var sum = industriousness + loyalty + honesty;
         var othersum = other.industriousness + other.honesty + other.loyalty;
-        if (sum>othersum) {
-            System.out.println(getName()+ " лучший Пуффендуец, чем " + other.getName());
-        }else {
-            System.out.println(other.getName()+ " лучший Пуффендуец, чем " + getName());
+        if (sum > othersum) {
+            System.out.println(getName() + " лучший Пуффендуец, чем " + other.getName());
+        } else {
+            System.out.println(other.getName() + " лучший Пуффендуец, чем " + getName());
         }
     }
 
@@ -51,7 +58,9 @@ public class Hufflepuff extends Hogwards {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Hufflepuff that = (Hufflepuff) o;
-        return industriousness == that.industriousness && loyalty == that.loyalty && honesty == that.honesty;
+        return industriousness == that.industriousness && loyalty ==
+                that.loyalty && honesty ==
+                that.honesty;
     }
 
     @Override
